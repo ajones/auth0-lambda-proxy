@@ -1,0 +1,19 @@
+{
+  "name": "auth0-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip": "rm auth0-proxy.zip && zip -r auth0-proxy.zip package.json *.js node_modules"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "got": "^11.8.2",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
