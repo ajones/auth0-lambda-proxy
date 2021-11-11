@@ -42,7 +42,7 @@ exports.handler = async (event) => {
 
   // validate authorization
   try {
-    const userId = validateToken(headers.authorization);
+    const userId = await validateToken(headers.authorization);
     headers[AUTHORIZED_USER_ID_HEADER] = userId;
   } catch (ex) {
     return {
@@ -55,7 +55,7 @@ exports.handler = async (event) => {
   try {
     const resp = await requestMethod(fullURL, {
       headers,
-      body: httpMethod == "POST" ? body : undefined,
+      body: httpMethod == "GET" ? undefined : body,
       searchParams: queryStringParameters,
     });
     console.log("resp", resp.statusCode, resp.body);
